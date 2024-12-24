@@ -1,0 +1,40 @@
+﻿body {
+    background: url('/Content/Images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+    .navbar a {
+        color: white !important;
+    }
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.btn-outline-dark {
+    color: white;
+    border-color: white;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .btn-outline-dark:hover {
+        color: black;
+        background-color: white;
+        border-color: white;
+    }
+
+

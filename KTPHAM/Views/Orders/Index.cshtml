@@ -1,0 +1,51 @@
+﻿@model IEnumerable<KTPHAM.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color: white">ORDERS</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Table.TableID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Table.TableID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderID })
+        </td>
+    </tr>
+}
+
+</table>

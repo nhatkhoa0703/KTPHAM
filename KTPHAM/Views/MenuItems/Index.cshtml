@@ -1,0 +1,72 @@
+﻿@model IEnumerable<KTPHAM.Models.MenuItem>
+
+@{
+    ViewBag.Title = "Menu Items";
+}
+
+<div class="container">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <h5 style="color: white">FOOD CATEGORIES</h5>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    @Html.ActionLink("All", "Index", new { category = "" }, new { @class = "list-group-item-action" })
+                </li>
+                <li class="list-group-item">
+                    @Html.ActionLink("Korean Food", "Index", new { category = "Korean food" }, new { @class = "list-group-item-action" })
+                </li>
+                <li class="list-group-item">
+                    @Html.ActionLink("Vietnamese Food", "Index", new { category = "Vietnamese food" }, new { @class = "list-group-item-action" })
+                </li>
+                <li class="list-group-item">
+                    @Html.ActionLink("American Food", "Index", new { category = "American food" }, new { @class = "list-group-item-action" })
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9">
+            <h2 class="text-center" style="color: white">Menu Items</h2>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var item in Model)
+                {
+                    <div class="col">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <img src="@Url.Content(item.ImageUrl)" class="card-img-top" alt="@item.Name" style="height: 200px; object-fit: cover;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">@item.Name</h5>
+                                <p class="card-text" style="color: black">@item.Description</p>
+                                <p class="card-text text-primary font-weight-bold">@item.Price.ToString("C")</p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <span class="badge @(item.IsAvailable ? "bg-success" : "bg-danger")">
+                                    @(item.IsAvailable ? "Available" : "Unavailable")
+                                </span>
+                            </div>
+                            <div class="overlay d-none position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex align-items-center justify-content-center">
+                                <div class="d-flex flex-column">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.MenuItemID }, new { @class = "btn btn-primary btn-sm mb-2" })
+                                    @Html.ActionLink("Details", "Details", new { id = item.MenuItemID }, new { @class = "btn btn-info btn-sm mb-2" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.MenuItemID }, new { @class = "btn btn-danger btn-sm" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        overflow: hidden;
+        position: relative;
+    }
+
+        .card:hover .overlay {
+            display: flex !important;
+        }
+</style>

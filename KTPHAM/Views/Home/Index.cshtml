@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row text-center" aria-labelledby="ktphamTitle">
+        <h1 id="ktphamTitle" class="display-4">Welcome to KTPHAM Restaurant</h1>
+        <p class="lead">Discover the best dining experience with our carefully crafted menus featuring a blend of American, Vietnamese, and Korean cuisines.</p>
+        <p>
+           
+            <a href="@Url.Action("About", "Home")" class="btn btn-info btn-lg">Learn About Us &raquo;</a>
+        </p>
+    </section>
+
+    <div class="row mt-4">
+        <section class="col-md-4" aria-labelledby="menuVarietyTitle">
+            <h2 id="menuVarietyTitle">Our Menu Variety</h2>
+            <p>
+                From sizzling Korean dishes to classic American comfort food and authentic Vietnamese flavors, we have something for everyone!
+            </p>
+            <p><a class="btn btn-outline-dark" href="/MenuItems" >View Menu &raquo;</a></p>
+        </section>
+        <section class="col-md-4" aria-labelledby="reservationsTitle">
+            <h2 id="reservationsTitle">Make a Reservation</h2>
+            <p>
+                Enjoy an unforgettable dining experience by reserving your table in advance. Click below to book your table now.
+            </p>
+            <p><a class="btn btn-outline-dark" href="@Url.Action("Reservations", "Reservations")">Reserve a Table &raquo;</a></p>
+        </section>
+        <section class="col-md-4" aria-labelledby="specialEventsTitle">
+            <h2 id="specialEventsTitle">Special Events</h2>
+            <p>
+                Host your special occasions with us! Whether it's a birthday, anniversary, or corporate event, we cater to all.
+            </p>
+            <p><a class="btn btn-outline-dark" href="@Url.Action("Contact", "Home")">Contact Us &raquo;</a></p>
+        </section>
+    </div>
+</main>

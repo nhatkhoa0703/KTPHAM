@@ -1,0 +1,50 @@
+﻿@model KTPHAM.Models.Payment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentMethod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentMethod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmountPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmountPaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PaymentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

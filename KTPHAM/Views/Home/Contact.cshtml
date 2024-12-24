@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<main class="container py-5" aria-labelledby="title">
+    <div class="row text-center">
+        <h2 id="title" class="display-4" style="color: black">@ViewBag.Title Us</h2>
+        <p class="lead">We'd love to hear from you! Whether you have questions, feedback, or would like to make a reservation, feel free to get in touch with us.</p>
+    </div>
+
+    <div class="row mt-5">
+        <!-- Contact Information -->
+        <div class="col-md-6">
+            <h3 class="mb-3">📍 Our Location</h3>
+            <address>
+                <strong>KTPHAM Restaurant</strong><br />
+                73 Nguyen Thi Thap<br />
+                Quan 7, Tp. Ho Chi Minh<br />
+                <abbr title="Phone">📞:</abbr> 0867500209 <br />
+                <abbr title="Email">✉️:</abbr> <a href="mailto:info@ktphamrestaurant.com">info@ktphamrestaurant.com</a>
+            </address>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <h3 class="mb-3">💬 Send Us a Message</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label" style="color: black">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required />
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label" style="color: black">Your Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label" style="color: black">Your Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Write your message here" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Additional Contact Options -->
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4>📞 Phone</h4>
+            <p>Reach us at 0867500209 for inquiries and reservations.</p>
+        </div>
+        <div class="col-md-4">
+            <h4>✉️ Email</h4>
+            <p>Send us an email at <a href="mailto:info@ktphamrestaurant.com">info@ktphamrestaurant.com</a></p>
+        </div>
+        <div class="col-md-4">      
+            <h4>⏰ Hours</h4>
+            <p>Monday - Sunday: 10:00 AM - 10:00 PM</p>
+        </div>
+    </div>
+</main>
+
+<style>
+    main {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h3, h4 {
+        color: #343a40;
+    }
+
+    address, p {
+        font-size: 1.1rem;
+        color: #6c757d;
+    }
+
+    .form-control {
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+</style>
